@@ -10,7 +10,15 @@ const app = express();
 const PORT = 5001;
 
 // Middleware
-app.use(cors());
+// In your backend server.js, update CORS:
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://welllog-ai-2.orender.com',
+    'https://welllog-ai-fdxt.onrender.com'
+  ],
+  credentials: true
+}));
 app.use(express.json({ limit: '500mb' }));
 app.use(express.urlencoded({ extended: true, limit: '500mb' }));
 
