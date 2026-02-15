@@ -14,7 +14,7 @@ import {
 import Select from 'react-select';
 import './App.css';
 
-const API_BASE_URL = 'http://localhost:5001';
+const API_BASE_URL = 'https://welllog-ai-fdxt.onrender.com';
 
 function App() {
   const [files, setFiles] = useState([]);
