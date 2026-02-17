@@ -4,7 +4,7 @@ A full-stack web application for analyzing LAS (Log ASCII Standard) well log fil
 
 ## 🎯 Overview
 
-WellLog AI is a professional tool designed for geologists, petroleum engineers, and data scientists to analyze well log data. It provides an intuitive interface for uploading LAS files, visualizing well curves, and extracting insights using statistical analysis.
+WellLog AI is a tool designed to analyze well log data. It provides an intuitive interface for uploading LAS files, visualizing well curves, and extracting insights using statistical analysis.
 
 ## ✨ Features
 
@@ -38,6 +38,16 @@ WellLog AI is a professional tool designed for geologists, petroleum engineers, 
 - **React-Select** - Multi-select dropdowns
 - **Axios** - HTTP client
 - **CSS3** - Styling with modern features
+
+System Architecture Overview
+<img width="1169" height="713" alt="Screenshot 2026-02-17 at 22 46 51" src="https://github.com/user-attachments/assets/a16a554c-2476-48eb-a1f4-d912b29a128d" />
+
+Database Schema
+<img width="255" height="743" alt="Screenshot 2026-02-17 at 22 47 33" src="https://github.com/user-attachments/assets/20a97d71-1ac0-4c68-be38-6a0325e1a065" />
+
+Data Flow Diagram
+<img width="467" height="726" alt="Screenshot 2026-02-17 at 22 49 11" src="https://github.com/user-attachments/assets/0f8649aa-d6d9-4b7b-b614-b33b7a2dea67" />
+
 
 ## 📁 Project Structure
 
