@@ -13,10 +13,10 @@ async function test() {
     
     const result = await model.generateContent('Say "Hello" in one word');
     const response = await result.response;
-    console.log('✅ SUCCESS! Response:', response.text());
+    console.log(' SUCCESS! Response:', response.text());
     
   } catch (error) {
-    console.error('❌ Error details:', {
+    console.error(' Error details:', {
       message: error.message,
       status: error.status,
       stack: error.stack
