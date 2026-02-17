@@ -23,10 +23,10 @@ async function listModels() {
         const model = genAI.getGenerativeModel({ model: modelName });
         const result = await model.generateContent('Say "hello" in one word');
         const response = await result.response;
-        console.log(`✅ SUCCESS with ${modelName}:`, response.text());
+        console.log(` SUCCESS with ${modelName}:`, response.text());
         break;
       } catch (e) {
-        console.log(`❌ ${modelName} failed:`, e.message);
+        console.log(` ${modelName} failed:`, e.message);
       }
     }
   } catch (error) {
