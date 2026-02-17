@@ -62,44 +62,6 @@ body {
   z-index: 0;
 }
 
-/* Floating particles animation */
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: float 15s infinite linear;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(100vh) translateX(0) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.3;
-  }
-  90% {
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(-100vh) translateX(100px) scale(2);
-    opacity: 0;
-  }
-}
-
 /* Navbar */
 .navbar {
   background: rgba(10, 10, 10, 0.95);
@@ -121,23 +83,6 @@ body {
   gap: 1rem;
 }
 
-.logo {
-  font-size: 2rem;
-  animation: pulse 2s infinite;
-  filter: drop-shadow(0 0 10px var(--primary-glow));
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 10px var(--primary-glow));
-  }
-  50% {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 20px var(--primary-glow));
-  }
-}
-
 .nav-brand h1 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -152,24 +97,24 @@ body {
   gap: 1rem;
 }
 
-.theme-toggle {
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: 50px;
-  padding: 0.6rem 1.2rem;
-  color: var(--text-primary);
+/* Chatbot Toggle Button */
+.chatbot-toggle {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  transition: all 0.3s;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
-.theme-toggle:hover {
-  border-color: var(--primary);
+.chatbot-toggle:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
   box-shadow: 0 0 20px var(--primary-glow);
-  transform: translateY(-2px);
 }
 
 /* Main Container */
@@ -882,6 +827,23 @@ body {
   50% { transform: translateX(3px); }
 }
 
+/* Chatbot Wrapper */
+.chatbot-wrapper {
+  margin-top: 2rem;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .main-container {
@@ -943,49 +905,4 @@ body {
 
 ::-webkit-scrollbar-corner {
   background: var(--bg-input);
-}
-
-/* Loading Animation */
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
-}
-
-.loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid var(--border-color);
-  border-top-color: var(--primary);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-/* Tooltip Customization */
-.recharts-tooltip-wrapper {
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
-}
-
-.recharts-default-tooltip {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--primary) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
-
-.recharts-tooltip-label {
-  color: var(--primary) !important;
-  font-weight: 600 !important;
-}
-
-.recharts-tooltip-item {
-  color: var(--text-secondary) !important;
 }

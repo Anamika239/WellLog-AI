@@ -12,9 +12,11 @@ import {
   Brush
 } from 'recharts';
 import Select from 'react-select';
+import Chatbot from './Chatbot';
 import './App.css';
 
-const API_BASE_URL = 'https://welllog-ai-fdxt.onrender.com';
+// For local development
+const API_BASE_URL = 'http://localhost:5001';
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -30,8 +32,9 @@ function App() {
   const [uploadProgress, setUploadProgress] = useState(0);
   const [error, setError] = useState('');
   const [filename, setFilename] = useState('');
+  const [showChatbot, setShowChatbot] = useState(false);
 
-  // Keep dark mode permanently
+  // Dark mode permanently on
   const [darkMode] = useState(true);
 
   useEffect(() => {
@@ -44,7 +47,7 @@ function App() {
       setFiles(response.data);
     } catch (error) {
       console.error('Error fetching files:', error);
-      setError('Failed to connect to backend');
+      setError('Failed to connect to backend. Make sure it\'s running on port 5001');
     }
   };
 
@@ -68,6 +71,8 @@ function App() {
         }
       });
       
+      console.log('Upload response:', response.data);
+      
       fetchFiles();
       setSelectedFile(response.data.fileId);
       setCurves(response.data.curves);
@@ -75,7 +80,7 @@ function App() {
       setSelectedDepthRange(response.data.depthRange);
       
       setError('');
-      alert('File uploaded successfully!');
+      alert(`File uploaded successfully! ${response.data.dataPoints} data points processed.`);
     } catch (error) {
       console.error('Upload error:', error);
       setError('Upload failed: ' + (error.response?.data?.error || error.message));
@@ -126,6 +131,7 @@ function App() {
         }
       });
       
+      console.log('Chart data received:', response.data);
       setChartData(response.data);
     } catch (error) {
       console.error('Error loading chart data:', error);
@@ -196,6 +202,14 @@ function App() {
       <nav className="navbar">
         <div className="nav-brand">
           <h1>WellLog AI</h1>
+        </div>
+        <div className="nav-controls">
+          <button 
+            className="chatbot-toggle" 
+            onClick={() => setShowChatbot(!showChatbot)}
+          >
+            {showChatbot ? 'Hide' : 'Show'} AI Assistant
+          </button>
         </div>
       </nav>
 
@@ -370,7 +384,7 @@ function App() {
               </div>
               
               <div className="insights-grid">
-                {interpretation.interpretations && Object.keys(interpretation.interpretations).map(curve => {
+                {Object.keys(interpretation.interpretations).map(curve => {
                   const data = interpretation.interpretations[curve];
                   const hasAnomalies = data.anomalies && data.anomalies.length > 0;
                   
@@ -399,7 +413,7 @@ function App() {
                       {hasAnomalies && (
                         <div className="anomalies">
                           <div className="anomaly-count">
-                            {data.anomalies.length} peaks detected
+                            {data.anomalies.length} anomalies detected
                           </div>
                           <div className="anomaly-list">
                             {data.anomalies.slice(0, 3).map((a, i) => (
@@ -435,6 +449,12 @@ function App() {
           )}
         </div>
       </div>
+
+      {showChatbot && (
+        <div className="chatbot-wrapper">
+          <Chatbot selectedFile={selectedFile} />
+        </div>
+      )}
     </div>
   );
 }
