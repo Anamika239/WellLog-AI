@@ -2,20 +2,6 @@
 
 A full-stack web application for analyzing LAS (Log ASCII Standard) well log files with interactive visualization and AI-powered interpretation.
 
-## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Usage Guide](#usage-guide)
-- [API Endpoints](#api-endpoints)
-- [Deployment](#deployment)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## 🎯 Overview
 
 WellLog AI is a professional tool designed for geologists, petroleum engineers, and data scientists to analyze well log data. It provides an intuitive interface for uploading LAS files, visualizing well curves, and extracting insights using statistical analysis.
@@ -128,14 +114,19 @@ Ask questions like:
 "What is the depth range?"
 "Show me anomalies"
 
-
 ______________________________________________________________________________________________________________________________________________________________________________
 
+Images - 
 
 
+<img width="1467" height="878" alt="Screenshot 2026-02-17 at 22 06 08" src="https://github.com/user-attachments/assets/2877c697-1fb8-406e-b782-918800c4541d" />
 
 
+<img width="1470" height="872" alt="Screenshot 2026-02-17 at 22 06 34" src="https://github.com/user-attachments/assets/578e6b4f-51f1-4af8-af3d-3972e81f1ec0" />
 
 
-
+<img width="408" height="836" alt="Screenshot 2026-02-17 at 22 07 05" src="https://github.com/user-attachments/assets/f6a8843a-e331-42a0-8124-1f637cbf01d0" />
+<img width="1466" height="878" alt="Screenshot 2026-02-17 at 22 07 53" src="https://github.com/user-attachments/assets/0128123f-0276-4cf8-9e8e-d76d67e5b257" />
+<img width="1470" height="505" alt="Screenshot 2026-02-17 at 22 09 38" src="https://github.com/user-attachments/assets/7379faba-d6b4-4ec5-834a-6fa162578c27" />
+<img width="1460" height="819" alt="Screenshot 2026-02-17 at 22 11 13" src="https://github.com/user-attachments/assets/9f1856d2-15d2-4d31-bcff-e6ed1bec3ead" />
 
